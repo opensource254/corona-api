@@ -8,26 +8,39 @@ const get = util.promisify(request.get);
 
 app.set('port', (process.env.PORT || 5000));
 
+// route index
 app.get('/', (req, res) => {
+    // fetch the data
     get_data()
         .then(response => res.json(response))
-        .catch((e) => {
-            res.json({
-                "message": "unable to load the data",
-                "error": e
-            });
-        })
 });
 
+// function that fetches and returns the parsed data 
 let get_data = () => {
     let url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv'
     return get({ url })
-        .then(resp => resp.body)
+        .then(resp => resp.body) //return the body of the response
         .then(text => {
-            return d3_dsv.csvParse(text)
+            let jsonData = d3_dsv.csvParse(text);
+            let tempArray = []
+                // loop through the data
+            jsonData.forEach(element => {
+                // assign the value of last property to a variable
+                let total = element[Object.keys(element).pop()]
+                    // delete the last property
+                delete element[Object.keys(element).pop()]
+                    // assign a new property total to the total value
+                element['total'] = total
+                    // push the new element to the tempArray
+                tempArray.push(element)
+            });
+            // return the tempArray
+            return tempArray;
         }).catch((e) => {
+            // on error
             return {
-                "message": "unable to load the data"
+                "message": "unable to load the data",
+                'error': e
             };
         })
 }
