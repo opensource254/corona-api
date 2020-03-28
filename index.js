@@ -10,18 +10,25 @@ app.set('port', (process.env.PORT || 5000));
 
 // route index
 app.get('/:country*?', (req, res) => {
+    // if any parameter (country) was passed
     if (req.params.country) {
+        // fetch the data
         get_data()
             .then(response => {
-                let data = {}
+
+                let countryData = {}
+                    // loop through all the countries
                 response.forEach(country => {
-                    if (Object.values(country).some(element => element.toLowerCase() === req.params.country.toLowerCase())) {
-                        data = country
-                    }
-                })
-                res.send(data);
+                        // for every country
+                        // if there is Country/Region is equal to passed country
+                        if (country['Country/Region'].toString().toLowerCase() === req.params.country.toLowerCase()) {
+                            countryData = country
+                        }
+                    })
+                    // send the country data back
+                res.send(countryData);
             }).catch(e => console.log(e))
-    } else {
+    } else { //if no parameter was passed
         // fetch the data
         get_data()
             .then(response => res.json(response));
