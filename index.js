@@ -9,10 +9,23 @@ const get = util.promisify(request.get);
 app.set('port', (process.env.PORT || 5000));
 
 // route index
-app.get('/', (req, res) => {
-    // fetch the data
-    get_data()
-        .then(response => res.json(response))
+app.get('/:country*?', (req, res) => {
+    if (req.params.country) {
+        get_data()
+            .then(response => {
+                let data = {}
+                response.forEach(country => {
+                    if (Object.values(country).some(element => element.toLowerCase() === req.params.country.toLowerCase())) {
+                        data = country
+                    }
+                })
+                res.send(data);
+            }).catch(e => console.log(e))
+    } else {
+        // fetch the data
+        get_data()
+            .then(response => res.json(response));
+    }
 });
 
 // function that fetches and returns the parsed data 
@@ -38,10 +51,10 @@ let get_data = () => {
             return tempArray;
         }).catch((e) => {
             // on error
-            return {
+            return [{
                 "message": "unable to load the data",
                 'error': e
-            };
+            }];
         })
 }
 
