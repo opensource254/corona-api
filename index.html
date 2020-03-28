@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<!-- <script type="text/javascript" src="./index.js"></script> -->
+<script>
+    let url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv';
+    fetch(url)
+        .then(resp => resp.text())
+        .then(text => {
+            let jsonData = d3.csvParse(text)
+            console.log(jsonData);
+            document.querySelector('body').textContent = JSON.stringify(jsonData)
+        });
+</script>
