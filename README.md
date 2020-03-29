@@ -16,6 +16,13 @@ $ npm run dev
 * https://rona-api.herokuapp.com/ ➡️ all countries data
 * [https://rona-api.herokuapp.com/{country}](https://rona-api.herokuapp.com/kenya) ➡️ single country data
 
+## Data Sources
+[world meters](https://https://www.worldometers.info/coronavirus/)
+[CSSEGISandData](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data)
+
+
+
+
 
 
 # Licence
