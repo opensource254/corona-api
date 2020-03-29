@@ -3,11 +3,13 @@ const app = express();
 
 const casesRoute = require('./routes/cases');
 const recoveredRoute = require('./routes/recovered');
-const deathsRoute = require('./routes/deaths')
+const deathsRoute = require('./routes/deaths');
+const indexRoute = require('./routes/combined');
 
 app.set('port', (process.env.PORT || 5000));
 
 // route index
+app.use('/', indexRoute);
 app.use('/reported', casesRoute);
 app.use('/recovered', recoveredRoute);
 app.use('/deaths', deathsRoute);
