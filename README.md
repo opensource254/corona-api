@@ -13,8 +13,18 @@ $ npm run dev
 ```
 
 ## Endpoints
+> Combined Data
 * https://rona-api.herokuapp.com/ ➡️ all countries data
 * [https://rona-api.herokuapp.com/{country}](https://rona-api.herokuapp.com/kenya) ➡️ single country data
+
+> Repoted Cases
+* https://rona-api.herokuapp.com/reported ➡️ all countries data
+* [https://rona-api.herokuapp.com/reported/{country}](https://rona-api.herokuapp.com/reported/kenya) ➡️ single country data
+
+> Deaths
+* https://rona-api.herokuapp.com/deaths ➡️ all countries data
+* [https://rona-api.herokuapp.com/reported/deaths/{country}](https://rona-api.herokuapp.com/reported/deaths/kenya) ➡️ single country data
+
 
 ## Data Sources
 [world meters](https://https://www.worldometers.info/coronavirus/)
