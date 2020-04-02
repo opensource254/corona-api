@@ -23,7 +23,7 @@ $ npm run dev
 
 > Deaths
 * https://rona-api.herokuapp.com/deaths ➡️ all countries data
-* [https://rona-api.herokuapp.com/reported/deaths/{country}](https://rona-api.herokuapp.com/reported/deaths/kenya) ➡️ single country data
+* [https://rona-api.herokuapp.com/deaths/{country}](https://rona-api.herokuapp.com/deaths/kenya) ➡️ single country data
 
 
 ## Data Sources
