@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const app = express();
 
 const casesRoute = require('./routes/cases');
@@ -7,7 +8,7 @@ const deathsRoute = require('./routes/deaths');
 const indexRoute = require('./routes/combined');
 
 app.set('port', (process.env.PORT || 5000));
-
+app.use(cors());
 // route index
 
 app.use('/reported', casesRoute);
