@@ -15,6 +15,16 @@ app.use('/reported', casesRoute);
 app.use('/recovered', recoveredRoute);
 app.use('/deaths', deathsRoute);
 app.use('/', indexRoute);
+
+app.use(function(req, res, next) {
+    if (res.status(404)) {
+        // respond with error
+        res.json({ error: 'Not found' });
+    }
+
+
+});
+
 app.listen(app.get('port'), () => {
     console.log(`Server started on port ${app.get('port')}`);
 });
