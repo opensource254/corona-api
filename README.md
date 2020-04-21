@@ -1,5 +1,5 @@
 # Corona API 
-> Covid 19 api 
+> Covid 19 api for Graphing
 
 ## Build Setup
 
