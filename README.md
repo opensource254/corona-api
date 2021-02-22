@@ -1,4 +1,4 @@
-# Corona API 
+# Corona API  ARCHIVED
 > Covid 19 api for Graphing
 
 [![GitHub issues](https://img.shields.io/github/issues/opensource254/corona-api?style=for-the-badge)](https://github.com/opensource254/corona-api/issues) [![GitHub forks](https://img.shields.io/github/forks/opensource254/corona-api?style=for-the-badge)](https://github.com/opensource254/corona-api/network) [![GitHub stars](https://img.shields.io/github/stars/opensource254/corona-api?style=for-the-badge)](https://github.com/opensource254/corona-api/stargazers) [![GitHub license](https://img.shields.io/github/license/opensource254/corona-api?style=for-the-badge)](https://github.com/opensource254/corona-api/blob/master/LICENSE)
@@ -6,7 +6,10 @@
 
 [![GitHub license](https://img.shields.io/gitter/room/opensource-254/community?color=brown&style=for-the-badge)](https://gitter.im/opensource-254/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
-
+Thanks to our contributors
+<a href="https://github.com/opensource254/corona-api/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=opensource254/corona-api" />
+</a>
 ## Build Setup
 
 ```bash
